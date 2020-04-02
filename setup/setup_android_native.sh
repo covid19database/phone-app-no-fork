@@ -48,9 +48,12 @@ npx bower update
 # echo "Downloading extras"
 # ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "extras;android;m2repository" "extras;google;google_play_services" "extras;google;instantapps" "extras;google;m2repository"
 
-echo "Setting up gradle using SDKMan"
+echo "Setting up sdkman"
 curl -s "https://get.sdkman.io" | bash
+ls -al ~/ 
 source "~/.sdkman/bin/sdkman-init.sh"
+
+echo "Setting up gradle using SDKMan"
 sdk install gradle 4.1
 
 npx cordova prepare

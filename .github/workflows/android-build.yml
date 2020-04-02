@@ -29,10 +29,13 @@ jobs:
     - name: Print the java version
       run: java -version
 
-    - name: Tries to figure out where android is listed
+    - name: Tries to figure out where android is installed
       run: |
         echo "Android listed at $ANDROID_HOME"
         ls -al /opt/
+
+    - name: Print out android libraries
+      run: ${ANDROID_HOME}/tools/bin/sdkmanager -list
 
     - name: Setup the cordova environment
       run: |
