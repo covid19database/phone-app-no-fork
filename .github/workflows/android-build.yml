@@ -34,3 +34,16 @@ jobs:
         echo "Android listed at $ANDROID_HOME"
         ls -al /opt/
 
+    - name: Setup the cordova environment
+      run: |
+        source setup/setup_android_native.sh
+        npx cordova -version
+        npx ionic -version
+
+    - name: Access cordova with a specified shell
+      shell: bash -l {0}
+      run: npx cordova -version
+
+    - name: Build android
+      shell: bash -l {0}
+      run: npx cordova build android

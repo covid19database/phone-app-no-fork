@@ -11,6 +11,18 @@ Pre-requisites
 - git
 - the most recent version of android studio
 
+Important
+---
+Most of the recent issues encountered have been due to incompatible setup. We
+have now:
+- locked down the dependencies,
+- created setup and teardown scripts to setup self-contained environments with
+  those dependencies, and
+- CI enabled to validate that they continue work.
+
+If you have setup failures, please compare the configuration in the passing CI
+builds with your configuration. That is almost certainly the source of the error.
+
 Installing
 ---
 Run the setup script for the platform you want to build
