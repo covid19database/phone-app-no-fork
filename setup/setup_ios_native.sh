@@ -5,7 +5,7 @@ COCOAPODS_VERSION=1.7.5
 EXPECTED_PLUGIN_COUNT=15
 
 # Setup the development environment
-source setup/setup_ios.sh
+source setup/setup_shared.sh
 
 ./bin/configure_xml_and_json.js cordovabuild
 

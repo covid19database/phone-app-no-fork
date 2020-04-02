@@ -29,6 +29,12 @@ jobs:
     - name: Print the xcode setup
       run: xcodebuild -version -sdk
 
+    - name: Print applications through dmg
+      run: ls /Applications
+
+    - name: Print applications through brew
+      run: brew list
+
     - name: Setup the cordova environment
       shell: bash -l {0}
       run: |
