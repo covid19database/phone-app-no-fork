@@ -7,19 +7,11 @@ EXPECTED_PLUGIN_COUNT=15
 # Setup the development environment
 source setup/setup_shared.sh
 
-./bin/configure_xml_and_json.js cordovabuild
-
-echo "Setting up all npm packages"
-npm install
-
-echo "Updating bower"
-npx bower update
-
 echo "Installing cocoapods"
 export PATH=~/.gem/ruby/2.6.0/bin:$PATH
 gem install --no-document --user-install cocoapods -v $COCOAPODS_VERSION
 
-npx cordova prepare
+source setup/setup_shared_native.sh
 
 INSTALLED_COUNT=`npx cordova plugin list | wc -l`
 echo "Found $INSTALLED_COUNT plugins, expected 15"
