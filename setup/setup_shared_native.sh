@@ -15,6 +15,6 @@ npx bower update
 # the cordova script. If anybody has a better option, they are welcome to share
 # it with us!
 echo "hack to make the local cordova fail on error"
-sed -i -e "s|/usr/bin/env node|/usr/bin/env node --unhandled-rejections=strict|" ./node_modules/.bin/cordova
+sed -i -e "s|/usr/bin/env node|/usr/bin/env node --unhandled-rejections=strict|" node_modules/cordova/bin/cordova
 
 npx cordova prepare
