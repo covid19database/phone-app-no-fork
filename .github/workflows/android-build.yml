@@ -51,6 +51,12 @@ jobs:
     - name: Build android
       shell: bash -l {0}
       run: |
+        echo $PATH
         which gradle
         gradle -version
+        echo "Let's rerun the sdkman again"
+        source ~/.sdkman/bin/sdkman-init.sh
+        echo $PATH
+        which gradle
+        gradle --version
         npx cordova build android
