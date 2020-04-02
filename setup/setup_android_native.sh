@@ -50,8 +50,14 @@ npx bower update
 
 echo "Setting up sdkman"
 curl -s "https://get.sdkman.io" | bash
+echo "....."
 ls -al ~/ 
-source "~/.sdkman/bin/sdkman-init.sh"
+echo "....."
+ls -al ~/.sdkman
+echo "....."
+ls -al ~/.sdkman/bin
+echo "....."
+source ~/.sdkman/bin/sdkman-init.sh
 
 echo "Setting up gradle using SDKMan"
 sdk install gradle 4.1
