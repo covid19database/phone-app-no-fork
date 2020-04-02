@@ -23,8 +23,12 @@ pod setup
 npx cordova prepare
 
 INSTALLED_COUNT=`npx cordova plugin list | wc -l`
-while [ $INSTALLED_COUNT -ne 15 ];
-do
+echo "Found $INSTALLED_COUNT plugins, expected 15"
+if [ $INSTALLED_COUNT -ne 15 ];
+then
+    echo "Found $INSTALLED_COUNT plugins, expected 15, retrying" 
     sleep 5
     npx cordova prepare
-done
+else
+    echo "All plugins installed successfully!"
+fi
