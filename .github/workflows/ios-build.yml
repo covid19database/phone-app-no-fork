@@ -29,14 +29,21 @@ jobs:
     - name: Print the xcode setup
       run: xcodebuild -version -sdk
 
-    # Runs a set of commands using the runners shell
     - name: Setup the cordova environment
+      shell: bash -l {0}
       run: |
         source setup/setup_ios_native.sh
         npx cordova -version
         npx ionic -version
 
-    # Runs a set of commands using the runners shell
+    - name: Access cordova directly
+      run: npx cordova -version
+
+    - name: Access cordova with a specified shell
+      shell: bash -l {0}
+      run: npx cordova -version
+
     - name: Build ios
+      shell: bash -l {0}
       run: npx cordova build ios
 
