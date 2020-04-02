@@ -43,8 +43,14 @@ jobs:
 
     - name: Access cordova with a specified shell
       shell: bash -l {0}
-      run: npx cordova -version
+      run: |
+        npx cordova -version
+        which gradle
+        gradle -version
 
     - name: Build android
       shell: bash -l {0}
-      run: npx cordova build android
+      run: |
+        which gradle
+        gradle -version
+        npx cordova build android
