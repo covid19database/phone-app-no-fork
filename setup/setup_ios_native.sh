@@ -24,11 +24,12 @@ npx cordova prepare
 
 INSTALLED_COUNT=`npx cordova plugin list | wc -l`
 echo "Found $INSTALLED_COUNT plugins, expected 15"
-if [ $INSTALLED_COUNT -ne 15 ];
+if [ $INSTALLED_COUNT -lt 15 ];
 then
     echo "Found $INSTALLED_COUNT plugins, expected 15, retrying" 
     sleep 5
     npx cordova prepare
 else
-    echo "All plugins installed successfully!"
+    echo "All plugins installed successfully! List is:"
+    npx cordova plugin list
 fi
