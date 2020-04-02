@@ -9,6 +9,7 @@ Pre-requisites
     - to install a particular version, use [xcode-select](https://www.unix.com/man-page/OSX/1/xcode-select/)
     - or this [supposedly easier to use repo](https://github.com/xcpretty/xcode-install)
 - git
+- the most recent version of android studio
 
 Installing
 ---
