@@ -1,6 +1,8 @@
 export NVM_VERSION=0.35.3
 export NODE_VERSION=9.4.0
 
+echo "Is this in a CI environment? $CI"
+
 echo "Installing the correct version of nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh | bash
 
@@ -16,4 +18,3 @@ echo "Upgrade the version of npm to the correct one"
 npm install -g npm@6.0.0
 
 git remote add upstream https://github.com/covid19database/phone-app.git
-

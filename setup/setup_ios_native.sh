@@ -28,7 +28,11 @@ then
     echo "Found $INSTALLED_COUNT plugins, expected 15, retrying" 
     sleep 5
     npx cordova prepare
-else
-    echo "All plugins installed successfully! List is:"
+elif [ $INSTALLED_COUNT -gt 15 ];
+    echo "Found extra plugins!"
     npx cordova plugin list
+    echo "Failing for investigation"
+    exit 1
+else
+    echo "All plugins installed successfully!"
 fi
