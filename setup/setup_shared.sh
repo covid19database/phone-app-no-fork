@@ -2,6 +2,7 @@ export NVM_VERSION=0.35.3
 export NODE_VERSION=9.4.0
 
 echo "Is this in a CI environment? $CI"
+export CI="true"
 
 echo "Installing the correct version of nvm"
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v$NVM_VERSION/install.sh | bash
