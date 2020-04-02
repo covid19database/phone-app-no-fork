@@ -27,7 +27,7 @@ jobs:
       run: ls -al
 
     - name: Print the xcode setup
-      run: xcodebuild -version -sdk -showBuildSettings
+      run: xcodebuild -version -sdk
 
     # Runs a set of commands using the runners shell
     - name: Setup the cordova build
