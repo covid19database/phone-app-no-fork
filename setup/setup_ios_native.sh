@@ -1,3 +1,6 @@
+# error out if any command fails
+set -e
+
 COCOAPODS_VERSION=1.7.5
 EXPECTED_PLUGIN_COUNT=15
 
@@ -20,7 +23,7 @@ pod setup
 npx cordova prepare
 
 INSTALLED_COUNT=`npx cordova plugin list | wc -l`
-while [ $INSTALLED_COUNT -ne 15];
+while [ $INSTALLED_COUNT -ne 15 ];
 do
     sleep 5
     npx cordova prepare

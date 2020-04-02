@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: ios-build
+name: osx-build-ios-android
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -30,8 +30,16 @@ jobs:
       run: xcodebuild -version -sdk
 
     # Runs a set of commands using the runners shell
-    - name: Setup the cordova build
+    - name: Setup the cordova environment
       run: |
         source setup/setup_ios_native.sh
         npx cordova -version
         npx ionic -version
+
+    # Runs a set of commands using the runners shell
+    - name: Build ios
+      run: cordova build ios
+
+    # Runs a set of commands using the runners shell
+    - name: Build android on OSX
+      run: cordova build android
