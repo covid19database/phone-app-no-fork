@@ -1,5 +1,6 @@
 export NVM_VERSION=0.35.3
-export NODE_VERSION=9.4.0
+export NODE_VERSION=13.12.0
+export NPM_VERSION=6.14.4
 
 echo "Is this in a CI environment? $CI"
 export CI="true"
@@ -15,7 +16,12 @@ export NVM_DIR="$HOME/.nvm"
 echo "Installing the correct node version"
 nvm install $NODE_VERSION
 
-echo "Upgrade the version of npm to the correct one"
-npm install -g npm@6.0.0
+echo "Check the version of npm"
+CURR_NPM_VERSION=`npm --version`
+if [ $CURR_NPM_VERSION != $NPM_VERSION ];
+then
+    echo "Invalid npm version, expected $NPM_VERSION, got $CURR_NPM_VERSION"
+    exit 1
+fi
 
 git remote add upstream https://github.com/covid19database/phone-app.git
