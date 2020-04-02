@@ -29,6 +29,7 @@ then
     sleep 5
     npx cordova prepare
 elif [ $INSTALLED_COUNT -gt 15 ];
+then
     echo "Found extra plugins!"
     npx cordova plugin list
     echo "Failing for investigation"
