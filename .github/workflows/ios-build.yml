@@ -53,3 +53,8 @@ jobs:
       shell: bash -l {0}
       run: npx cordova build ios
 
+    - name: Cleanup the cordova environment
+      shell: bash -l {0}
+      run: |
+        source setup/teardown_ios_native.sh
+
