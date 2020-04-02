@@ -13,9 +13,7 @@ JAVA_VERSION=`javac -version`
 echo "Found java in the path with version $JAVA_VERSION"
 
 echo "Setting up SDK environment"
-ANDROID_SDK_URL="https://dl.google.com/android/repository/commandlinetools-linux-6200805_latest.zip"
 ANDROID_BUILD_TOOLS_VERSION=27.0.3
-ANDROID_HOME=./android-sdk
 MIN_SDK_VERSION=21
 TARGET_SDK_VERSION=28
 
