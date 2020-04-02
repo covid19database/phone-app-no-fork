@@ -36,17 +36,17 @@ npm install
 echo "Updating bower"
 npx bower update
 
-echo "Downloading buildtools $ANDROID_BUILD_TOOLS_VERSION"
-${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
-
-echo "Downloading platforms for minSDK ($MIN_SDK_VERSION) and targetSDK ($TARGET_SDK_VERSION)"
-${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platforms;android-$MIN_SDK_VERSION" "platforms;android-$TARGET_SDK_VERSION"
-
-echo "Downloading google APIs for minSDK ($MIN_SDK_VERSION) and targetSDK ($TARGET_SDK_VERSION)"
-${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "add-ons;addon-google_apis-google-$MIN_SDK_VERSION" "add-ons;addon-google_apis-google-$TARGET_SDK_VERSION"
-
-echo "Downloading extras"
-${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "extras;android;m2repository" "extras;google;google_play_services" "extras;google;instantapps" "extras;google;m2repository"
+# echo "Downloading buildtools $ANDROID_BUILD_TOOLS_VERSION"
+# ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platform-tools" "build-tools;${ANDROID_BUILD_TOOLS_VERSION}"
+# 
+# echo "Downloading platforms for minSDK ($MIN_SDK_VERSION) and targetSDK ($TARGET_SDK_VERSION)"
+# ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "platforms;android-$MIN_SDK_VERSION" "platforms;android-$TARGET_SDK_VERSION"
+# 
+# echo "Downloading google APIs for minSDK ($MIN_SDK_VERSION) and targetSDK ($TARGET_SDK_VERSION)"
+# ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "add-ons;addon-google_apis-google-$MIN_SDK_VERSION" "add-ons;addon-google_apis-google-$TARGET_SDK_VERSION"
+# 
+# echo "Downloading extras"
+# ${ANDROID_HOME}/tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "extras;android;m2repository" "extras;google;google_play_services" "extras;google;instantapps" "extras;google;m2repository"
 
 echo "Setting up gradle using SDKMan"
 curl -s "https://get.sdkman.io" | bash
