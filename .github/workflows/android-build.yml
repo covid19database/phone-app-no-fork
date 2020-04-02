@@ -34,9 +34,6 @@ jobs:
         echo "Android listed at $ANDROID_HOME"
         ls -al /opt/
 
-    - name: Print out android libraries
-      run: ${ANDROID_HOME}/tools/bin/sdkmanager -list
-
     - name: Setup the cordova environment
       run: |
         source setup/setup_android_native.sh
