@@ -35,6 +35,7 @@ jobs:
         ls -al /opt/
 
     - name: Setup the cordova environment
+      shell: bash -l {0}
       run: |
         source setup/setup_android_native.sh
         npx cordova -version
