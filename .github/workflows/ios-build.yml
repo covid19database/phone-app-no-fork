@@ -24,7 +24,7 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Print the xcode path
-      run: ls -al
+      run: xcode-select --print-path
 
     - name: Print the xcode setup
       run: xcodebuild -version -sdk
