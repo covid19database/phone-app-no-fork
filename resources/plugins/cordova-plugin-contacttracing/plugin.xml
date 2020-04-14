@@ -30,6 +30,7 @@
 
     <!-- Framework and plugins for Kotlin -->
     <framework src="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.71"/>
+    <framework src="src/android/plugin.gradle" custom="true" type="gradleReference"/>
     <apply-plugin>kotlin-android-extensions</apply-plugin>
     <apply-plugin>kotlin-kapt</apply-plugin>
 
@@ -39,23 +40,11 @@
 
     <config-file target="config.xml" parent="/*">
       <feature name="ContactTracing">
-        <param name="android-package" value="org.covidwatch.libcontacttracing.ContactTracing" onload="true"/>
+        <param name="android-package" value="org.tcncoalition.contacttracing.ContactTracing" onload="true"/>
       </feature>
     </config-file>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest">
-      <uses-permission android:name="android.permission.BLUETOOTH"/>
-      <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-      <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    </config-file>
-
-    <source-file src="src/android/UUIDUtil.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/CENScanner.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/CENHandler.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/CENGenerator.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/CENAdvertiser.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/CEN.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
-    <source-file src="src/android/ContactTracing.kt" target-dir="app/src/main/java/org/covidwatch/libcontacttracing"/>
+    <source-file src="src/android/ContactTracing.kt" target-dir="app/src/main/java/org/tcncoalition/contacttracing"/>
 
   </platform>
 
@@ -69,6 +58,7 @@
     </config-file>
 
     <framework src="CoreBluetooth.framework" />
+    <framework src="tcn-client-ios" type="podspec" spec="~> 0.4.1" />
 
     <preference name="BLUETOOTH_USAGE_DESCRIPTION" default="Keeps track of anonymized contact events to assess risk. Performs best when location tracking is set to 'Always Allow'." />
     <config-file target="*-Info.plist" parent="NSBluetoothPeripheralUsageDescription">
@@ -85,14 +75,6 @@
     </config-file>
 
     <source-file src="src/ios/ContactTracing.swift" target-dir="ContactTracing"/>
-    <source-file src="src/ios/ContactTracingBluetooth/BluetoothController.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/BluetoothController+ContactEvent.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/BluetoothService.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/BluetoothService+CoreBluetooth.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/CBPeripheral+Additions.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/ContactTracingBluetooth.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/ContactTracingBluetoothService.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
-    <source-file src="src/ios/ContactTracingBluetooth/DistanceEstimation.swift" target-dir="ContactTracing/ContactTracingBluetooth"/>
 
   </platform>
 
