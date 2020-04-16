@@ -44,6 +44,7 @@
         <hook src="hooks/after_platform_add/ios/ios_copy_locales.js" type="after_platform_add" />
         <preference name="WKWebViewOnly" value="true" />
         <preference name="WKSuspendInBackground" value="false" />
+        <preference name="deployment-target" value="13.0" />
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
         <icon height="40" src="resources/ios/icon/icon-40.png" width="40" />
